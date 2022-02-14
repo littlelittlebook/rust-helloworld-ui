@@ -186,7 +186,7 @@ Make sure the original status remains:
 ```bash
 near view YOUR_ACCOUNT_NAME get_status '{"account_id": "YOUR_ACCOUNT_NAME"}'
 ```
-
+test
 ## Testing
 To test run:
 ```bash

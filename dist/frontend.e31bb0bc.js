@@ -32261,7 +32261,7 @@ function Form(_ref) {
     onSubmit: onSubmit
   }, /*#__PURE__*/_react.default.createElement("fieldset", {
     id: "fieldset"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "say hello world!  reply should be \"hello world! (message)\""), /*#__PURE__*/_react.default.createElement("p", {
+  }, /*#__PURE__*/_react.default.createElement("p", null, "say hello world!  reply should be \"hello world! (messag)\""), /*#__PURE__*/_react.default.createElement("p", {
     className: "highlight"
   }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "message"
@@ -49004,7 +49004,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42441" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39537" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

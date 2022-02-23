@@ -60,6 +60,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     <main>
       <header>
         <h1>Near hello world</h1>
+        <p>modified from Near Status Message example</p>
 
         {currentUser ?
           <p>Currently signed in as: <code>{currentUser.accountId}</code></p>

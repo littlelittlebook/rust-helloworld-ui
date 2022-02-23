@@ -11,7 +11,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
   useEffect(async () => {
     if (currentUser) {
-      const status = await contract.get_status({
+      const status = await contract.get_helloworld({
         account_id: currentUser.accountId
       });
 
@@ -25,7 +25,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     const { fieldset, message } = event.target.elements;
     fieldset.disabled = true;
 
-    await contract.set_status(
+    await contract.helloworld(
       {
         message: message.value,
         account_id: currentUser.accountId
@@ -33,7 +33,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       BOATLOAD_OF_GAS
     );
 
-    const status = await contract.get_status({
+    const status = await contract.get_helloworld({
       account_id: currentUser.accountId
     });
 
@@ -47,7 +47,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const signIn = () => {
     wallet.requestSignIn(
       nearConfig.contractName,
-      "NEAR Status Message"
+      "NEAR HelloWorld"
     );
   };
 
@@ -59,12 +59,12 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   return (
     <main>
       <header>
-        <h1>NEAR Status Message</h1>
+        <h1>Near hello world</h1>
 
         {currentUser ?
           <p>Currently signed in as: <code>{currentUser.accountId}</code></p>
         :
-          <p>Update or add a status message! Please login to continue.</p>
+          <p>say hello world! Please login to continue.</p>
         }
 
         { currentUser
@@ -82,7 +82,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
       {status ?
         <>
-          <p>Your current status:</p>
+          <p>reply:</p>
           <p>
             <code>
               {status}
@@ -98,8 +98,8 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
 App.propTypes = {
   contract: PropTypes.shape({
-    set_status: PropTypes.func.isRequired,
-    get_status: PropTypes.func.isRequired
+    helloworld: PropTypes.func.isRequired,
+    get_helloworld: PropTypes.func.isRequired,
   }).isRequired,
   currentUser: PropTypes.shape({
     accountId: PropTypes.string.isRequired,

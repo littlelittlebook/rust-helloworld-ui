@@ -28,6 +28,16 @@ impl StatusMessage {
     pub fn get_status(&self, account_id: String) -> Option<String> {
         return self.records.get(&account_id);
     }
+
+    pub fn helloworld(&mut self, message: String) {
+        let account_id = env::signer_account_id();
+        let content = format!("{}{}", "hello world! ", message);
+        self.records.insert(&account_id, &content);
+    }
+
+    pub fn get_helloworld(&self, account_id: String) -> Option<String> {
+        return self.records.get(&account_id);
+    }
 }
 
 #[cfg(not(target_arch = "wasm32"))]
